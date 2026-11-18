@@ -1,0 +1,50 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    @apply border-slate-200 dark:border-slate-800/80;
+  }
+
+  html {
+    @apply antialiased;
+  }
+
+  body {
+    @apply bg-slate-100 font-sans text-slate-900 transition-colors duration-300 dark:bg-canvas dark:text-slate-100;
+  }
+
+  ::selection {
+    @apply bg-accent-500/30 text-slate-900 dark:text-white;
+  }
+}
+
+@layer utilities {
+  .surface {
+    @apply border border-slate-200 bg-white shadow-sm shadow-slate-200/50 dark:border-slate-800/80 dark:bg-panel/70 dark:shadow-none;
+  }
+
+  .surface-hover {
+    @apply transition-all duration-200 hover:border-accent-500/40 hover:shadow-glow dark:hover:border-accent-500/40;
+  }
+
+  .muted {
+    @apply text-slate-500 dark:text-slate-400;
+  }
+
+  .grid-backdrop {
+    background-image: linear-gradient(rgba(148, 163, 184, 0.07) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(148, 163, 184, 0.07) 1px, transparent 1px);
+    background-size: 40px 40px;
+  }
+
+  .scrollbar-thin::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+
+  .scrollbar-thin::-webkit-scrollbar-thumb {
+    @apply rounded-full bg-slate-300 dark:bg-slate-700;
+  }
+}
